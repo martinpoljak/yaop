@@ -147,8 +147,12 @@ class YAOP
         end
         
         # Takes parameters from last argument
-        parameters = index[last].values[index[last].types.length..-1]
+        if not last.nil?
+            parameters = index[last].values[index[last].types.length..-1]
+        end
+           
         parameters = [ ] if parameters.nil?
+        
         
         return self.class::Result::new(
             result.map_keys! { |k| k.to_s },              # converts keys from symbols back to string
