@@ -107,12 +107,16 @@ class YAOP
 
         # Parses
         last = nil    # note: it's used below
+        params = [ ]
+        
         ARGV.each do |arg|
             if index.has_key? arg.to_sym
                 last = arg.to_sym
                 index[last].present = true
             elsif not last.nil?
                 index[last].values << arg
+            else
+                params << arg
             end
         end
 
@@ -149,6 +153,8 @@ class YAOP
         # Takes parameters from last argument
         if not last.nil?
             parameters = index[last].values[index[last].types.length..-1]
+        else
+            parameters = params
         end
            
         parameters = [ ] if parameters.nil?
