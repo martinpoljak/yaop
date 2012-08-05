@@ -126,8 +126,8 @@ class YAOP
         index.each_pair do |opt, spec|
         
             # If no types defines, sets true as symbol of presency
-            if spec.types.empty? and spec.present
-                result[opt] = true
+            if spec.types.empty?
+                result[opt] = spec.present
                 next
             end
         
