@@ -12,7 +12,7 @@ rescue Bundler::BundlerError => e
 end
 
 require 'rake'
-require 'jeweler'
+require 'jeweler2'
 
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
@@ -20,7 +20,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "yaop"
   gem.homepage = "https://github.com/martinkozak/yaop"
   gem.license = "MIT"
-  gem.summary = "Yet another options parser. Parses the command-line arguments and parameters. Simple, lightweight with nice declarative approach."
+  gem.summary = "Yet another options parser. Parses the command-line arguments and parameters. Simple, lightweight with nice DSL declarative approach."
   gem.email = "martinkozak@martinkozak.net"
   gem.authors = ["Martin Kozák"]
 end
