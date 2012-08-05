@@ -9,8 +9,7 @@ declarative approach. See example:
     require "yaop"
     
     options = YAOP::get do
-        option "--strip"
-        type Boolean, false       # simple presency is enough
+        option "--strip"          # simple presency is enough
         
         options "-l", "--level"   # both of them
         type Integer, 7           # first part, default value 7
@@ -43,7 +42,7 @@ Contributing
 Copyright
 ---------
 
-Copyright &copy; 2011 [Martin Kozák][3]. See `LICENSE.txt` for
+Copyright &copy; 2011-2012 [Martin Kozák][3]. See `LICENSE.txt` for
 further details.
 
 [2]: http://github.com/martinkozak/yaop/issues
