@@ -119,11 +119,19 @@ class YAOP
                 params << arg
             end
         end
-
+        
         # Converts datatypes
         result = Hash::new { |dict, key| dict[key] = [ ] }
 
         index.each_pair do |opt, spec|
+        
+            # If no types defines, sets true as symbol of presency
+            if spec.types.empty?
+                result[opt] = true
+                next
+            end
+        
+            # If types defined, takes them
             spec.types.each_index do |i|
                 type, default = spec.types[i]
                 value = nil
@@ -142,14 +150,14 @@ class YAOP
                 end
             end
         end
-
+        
         # Converts single value arguments to single-ones
         result.each_pair do |opt, values|
             if index[opt].types.length == 1
                 result[opt] = values.first
             end
         end
-        
+
         # Takes parameters from last argument
         if not last.nil?
             parameters = index[last].values[index[last].types.length..-1]
